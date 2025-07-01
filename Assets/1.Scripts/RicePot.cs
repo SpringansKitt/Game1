@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RicePot : MonoBehaviour
+public class RicePot : IngredientContainer
 {
     public WorkShop workShop;
     public GameObject RicePrefeb;

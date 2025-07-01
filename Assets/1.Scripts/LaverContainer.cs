@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Laver : MonoBehaviour
+public class LaverContainer: IngredientContainer
 {
     public WorkShop workShop;
     public GameObject laverPrefeb;
