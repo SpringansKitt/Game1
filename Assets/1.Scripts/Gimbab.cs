@@ -3,15 +3,12 @@ using UnityEngine;
 
 public class Gimbab : MonoBehaviour
 {
-    public List<Material> materials = new List<Material> ();
-    void Start()
-    {
-        
-    }
+    public List<IngredientName> ingredientNames = new List<IngredientName>();
+    public bool rolled;
+    
 
-    // Update is called once per frame
-    void Update()
+    public void AddIngredient(IngredientName ingredientName)
     {
-        
+        ingredientNames.Add(ingredientName);
     }
 }
