@@ -14,6 +14,7 @@ public class LaverContainer: IngredientContainer
         ingredient = Instantiate(ingredientPrefab);
         ingredient.transform.position = worldPoint;
         ishold = true;
+        holdTimer = 0f;
     }
 
     public override void Up(Vector2 worldPoint)
@@ -22,7 +23,12 @@ public class LaverContainer: IngredientContainer
     }
     void Update()
     {
-        if (ishold)
+        if (ishold && Input.GetMouseButton(0))
+        {
+            holdTimer += Time.deltaTime;
+        }
+
+        if (ishold && holdTimer >= 1f)
         {
             Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             ingredient.transform.position = worldPoint;
