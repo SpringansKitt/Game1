@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientName: 4
+  ingredient: {fileID: 0}
 --- !u!61 &90506934
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -506,6 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientName: 0
+  ingredient: {fileID: 0}
   RicePrefeb: {fileID: 3474835362111085061, guid: a9ed4c6fcd49cea478cb6d05795a2521, type: 3}
 --- !u!1 &361618038
 GameObject:
@@ -600,6 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientName: 7
+  ingredient: {fileID: 0}
 --- !u!212 &361618042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -964,6 +967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientName: 6
+  ingredient: {fileID: 0}
 --- !u!212 &578292477
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1213,7 +1217,7 @@ GameObject:
   - component: {fileID: 954280945}
   - component: {fileID: 954280947}
   m_Layer: 0
-  m_Name: Laver
+  m_Name: Laver Container
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1247,8 +1251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientName: 1
-  laverPrefeb: {fileID: 6413171299164833508, guid: 8e93ba67ff1b1b245904ed5aeb4fa055, type: 3}
   ingredient: {fileID: 0}
+  laverPrefeb: {fileID: 6413171299164833508, guid: 8e93ba67ff1b1b245904ed5aeb4fa055, type: 3}
 --- !u!212 &954280946
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1452,6 +1456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientName: 2
+  ingredient: {fileID: 0}
 --- !u!61 &1092449866
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1689,6 +1694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientName: 5
+  ingredient: {fileID: 0}
 --- !u!212 &1571091347
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1857,7 +1863,7 @@ Transform:
   m_GameObject: {fileID: 1921852639}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.011, y: -0.198, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 0.33963788, y: 0.40901786, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2020,6 +2026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientName: 3
+  ingredient: {fileID: 0}
 --- !u!61 &2014516050
 BoxCollider2D:
   m_ObjectHideFlags: 0

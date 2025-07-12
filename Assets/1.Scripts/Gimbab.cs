@@ -3,12 +3,14 @@ using UnityEngine;
 
 public class Gimbab : MonoBehaviour
 {
-    public List<IngredientName> ingredientNames = new List<IngredientName>();
+    public List<Ingredient> ingredients = new List<Ingredient>();
     public bool rolled;
     
 
-    public void AddIngredient(IngredientName ingredientName)
+    public void AddIngredient(Ingredient ingredient)
     {
-        ingredientNames.Add(ingredientName);
+        ingredient.transform.position = transform.position;
+        ingredient.transform.parent = transform;
+        ingredients.Add(ingredient);
     }
 }
