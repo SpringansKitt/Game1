@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class LaverContainer: IngredientContainer
 {
-    public GameObject laverPrefeb;
-    private bool ishold = false;
-    private float holdTimer = 0f;
-    
     public override void Down(Vector2 worldPoint)
     {
         ingredient = null;
@@ -46,7 +42,7 @@ public class LaverContainer: IngredientContainer
         if (holdTimer >= 0.25f && ingredient == null && ishold)
         {
             Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Ingredient ingredientPrefab = Resources.Load<Ingredient>("Ingredient");
+            Ingredient ingredientPrefab = Resources.Load<Ingredient>(ingredientName.ToString());
             ingredient = Instantiate(ingredientPrefab);
             ingredient.transform.position = worldPoint;
         }

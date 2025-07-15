@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class IngredientContainer : MonoBehaviour
 {
-    public IngredientName IngredientName;
+    public IngredientName ingredientName;
     public Ingredient ingredient;
-    private bool ishold = false;
-    private float holdTimer = 0f;
+    public bool ishold = false;
+    public float holdTimer = 0f;
 
     public virtual void Down(Vector2 worldPoint)
     {
@@ -23,11 +23,12 @@ public class IngredientContainer : MonoBehaviour
         if (holdTimer <= 0.2f && ishold)
         {
             float random_y = Random.Range(-4f, 0f);
-            Ingredient ingredientPrefab = Resources.Load<Ingredient>("Ingredient");
+            Ingredient ingredientPrefab = Resources.Load<Ingredient>(ingredientName.ToString());
             ingredient = Instantiate(ingredientPrefab);
             ingredient.transform.position = new Vector3(0f, random_y, 0f);
-            
-            gameObject.GetComponent<Gimbab>().AddIngredient(ingredient);
+            //김밥매니저에서 김밥 컴포넌트를 가져오기
+            GimbabManager.instance.gimbab.AddIngredient(ingredient);
+            //gameObject.GetComponent<Gimbab>().AddIngredient(ingredient); //현재 자신의 오브젝트
         }
         ingredient = null;
         ishold = false;

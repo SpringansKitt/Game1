@@ -5,7 +5,7 @@ public class GimbabManager : MonoBehaviour
     public Gimbab gimbabPrefeb;
     public Transform cuttingBoardTr;
     public static GimbabManager instance;
-    public Gimbab gimbab;
+    public Gimbab gimbab; //¾À »ó¿¡ »ý¼ºµÈ ±è¹ä ÄÄÆ÷³ÍÆ®
     private IngredientContainer ingredientContainer;
 
     public void Awake()
@@ -53,7 +53,11 @@ public class GimbabManager : MonoBehaviour
 
     public void StartWork()
     {
+        User user = User.Instance;
         gimbab = Instantiate(gimbabPrefeb);
         gimbab.transform.position = cuttingBoardTr.position;
+        user.endurance = 100.0f;
+        user.isOrder = true;
+        user.StartDecreaseEndurance();
     }
 }
