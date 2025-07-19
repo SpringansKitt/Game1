@@ -53,11 +53,11 @@ public class GimbabManager : MonoBehaviour
 
     public void StartWork()
     {
-        User user = User.Instance;
+        GameManager gameManager = GameManager.instance;
         gimbab = Instantiate(gimbabPrefeb);
         gimbab.transform.position = cuttingBoardTr.position;
-        user.endurance = 100.0f;
-        user.isOrder = true;
-        user.StartDecreaseEndurance();
+        gameManager.endurance = 100.0f;
+        gameManager.isOrder = true;
+        gameManager.StartDecreaseEndurance();
     }
 }

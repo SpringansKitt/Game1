@@ -9,7 +9,7 @@ public class Gimbab : MonoBehaviour
     
     public void AddIngredient(Ingredient ingredient)
     {
-        User user = User.Instance;
+        User user = User.instance;
         ingredient.transform.position = transform.position;
         ingredient.transform.parent = transform;
         ingredients.Add(ingredient);

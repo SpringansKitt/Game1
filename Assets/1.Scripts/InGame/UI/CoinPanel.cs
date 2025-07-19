@@ -9,9 +9,8 @@ public class CoinPanel : MonoBehaviour
         coinText = GetComponentInChildren<TMP_Text>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        coinText.text = User.Instance.coin.ToString();
+        coinText.text = User.instance.userData.coin.ToString();
     }
 }
