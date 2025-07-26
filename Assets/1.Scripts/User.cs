@@ -52,7 +52,6 @@ public class User : MonoBehaviour
         {
             UserIngredient userIngredient = new UserIngredient();
             userIngredient.key = ingKey;
-            userIngredient.count = count;
             userIngredient.inPossession = isHave;
             userData.userIngredients.Add(userIngredient);
             SaveManager.SaveData("UserData", userData);
@@ -60,13 +59,34 @@ public class User : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.A))
         {
-            AddIngredient("당근", 10, true);
+            AddIngredient("당근");
         }
     }
 
-    public void AddIngredient(string ingKey, int count, bool ishave)
+    //재료를 얻었을떄 호출되는 호출
+    public void AddIngredient(string ingKey)//, int count, bool ishave
     {
-        //매개변수 ingKey,count에 따라서 유저 재료 데이터 증가하게 처리하기
+        UserIngredient userIngredient = GetUserIngredient(ingKey);
+        userIngredient.inPossession = true;
+        SaveManager.SaveData("UserData", userData);
+    }
+
+    //유재 재료를 가져올때 호출되는 호출
+    public UserIngredient GetUserIngredient(string ingKey)
+    {
+        for (int i = 0; i < userData.userIngredients.Count; i++)
+        {
+            if (userData.userIngredients[i].key == ingKey)
+            {
+                return userData.userIngredients[i];
+            }
+        }
+        UserIngredient userIngredient = new UserIngredient();
+        userIngredient.key = ingKey;
+        userIngredient.inPossession = false;
+        userData.userIngredients.Add(userIngredient);
+
+        return userIngredient;
     }
 
     public void AddCoin()
@@ -107,6 +127,5 @@ public class UserData
 public class UserIngredient
 {
     public string key;
-    public int count;
     public bool inPossession;
 }

@@ -1,6 +1,39 @@
 {
-    "coin": 1000,
-    "userIngredients": [],
+    "coin": 1004,
+    "userIngredients": [
+        {
+            "key": "Egg",
+            "inPossession": false
+        },
+        {
+            "key": "CrabStick",
+            "inPossession": false
+        },
+        {
+            "key": "Carrot",
+            "inPossession": false
+        },
+        {
+            "key": "Laver",
+            "inPossession": false
+        },
+        {
+            "key": "Spinach",
+            "inPossession": false
+        },
+        {
+            "key": "Cucumber",
+            "inPossession": false
+        },
+        {
+            "key": "Rice",
+            "inPossession": false
+        },
+        {
+            "key": "Ham",
+            "inPossession": false
+        }
+    ],
     "userName": "",
     "userLevel": 1,
     "userExp": 0.0

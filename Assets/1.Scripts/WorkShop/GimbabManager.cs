@@ -12,9 +12,9 @@ public class GimbabManager : MonoBehaviour
     {
         instance = this;
     }
-    private void Start()
+    void Start()
     {
-        StartWork();
+        
     }
 
     private void Update()

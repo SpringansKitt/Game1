@@ -8,6 +8,13 @@ public class IngredientContainer : MonoBehaviour
     public bool ishold = false;
     public float holdTimer = 0f;
 
+
+    void Start()
+    {
+        UserIngredient userIngredient = User.instance.GetUserIngredient(ingredientName.ToString());
+        Transform rootTr = transform.Find("Root");
+        rootTr.gameObject.SetActive(userIngredient.inPossession);
+    }
     public virtual void Down(Vector2 worldPoint)
     {
         ingredient = null;
@@ -52,7 +59,23 @@ public enum IngredientName
     Carrot,
     Egg,
     Ham,
+    CrabStick,
     Spinach,
+    Cucumber,
     Burdock,
-    PickledRadish
+    PickledRadish,
+    Cheeze,
+    Tuna,
+    SesameLeaf,
+    Salad,
+    Gimchi,
+    ChiliPepper,
+    PriedShrimp,
+    PorkCutlet,
+    KoreanFishCake,
+    Bulgogi,
+    Mayonnaise,
+    Sesame,
+    Oil,
+    Salt
 }
