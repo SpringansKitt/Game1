@@ -11,8 +11,14 @@ public class Customer : MonoBehaviour
     public void Enter()
     {
         gameObject.SetActive(true);
-        orderCanvas.StartOrder(orderScript);
 
+        Invoke("StartOrder", Random.Range(2f, 3f));
+
+    }
+
+    public void StartOrder()
+    {
+        orderCanvas.StartOrder(orderScript);
     }
     void Start()
     {

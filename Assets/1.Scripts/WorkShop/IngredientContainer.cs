@@ -56,6 +56,7 @@ public enum IngredientName
 {
     Rice,
     Laver,
+    Kelp,
     Carrot,
     Egg,
     Ham,
@@ -71,11 +72,7 @@ public enum IngredientName
     Gimchi,
     ChiliPepper,
     PriedShrimp,
-    PorkCutlet,
     KoreanFishCake,
+    PorkCutlet,
     Bulgogi,
-    Mayonnaise,
-    Sesame,
-    Oil,
-    Salt
 }

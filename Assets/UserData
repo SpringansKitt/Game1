@@ -1,5 +1,5 @@
 {
-    "coin": 1004,
+    "coin": 1016,
     "userIngredients": [
         {
             "key": "Egg",
@@ -31,6 +31,14 @@
         },
         {
             "key": "Ham",
+            "inPossession": false
+        },
+        {
+            "key": "Burdock",
+            "inPossession": false
+        },
+        {
+            "key": "PickledRadish",
             "inPossession": false
         }
     ],

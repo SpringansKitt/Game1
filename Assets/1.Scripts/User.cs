@@ -129,3 +129,9 @@ public class UserIngredient
     public string key;
     public bool inPossession;
 }
+
+[System.Serializable]
+public class UserRecipe
+{
+    public string key;
+}
