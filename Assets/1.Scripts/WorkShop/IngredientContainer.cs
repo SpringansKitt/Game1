@@ -30,7 +30,7 @@ public class IngredientContainer : MonoBehaviour
         if (holdTimer <= 0.2f && ishold)
         {
             float random_y = Random.Range(-4f, 0f);
-            Ingredient ingredientPrefab = Resources.Load<Ingredient>(ingredientName.ToString());
+            Ingredient ingredientPrefab = Resources.Load<Ingredient>("Ingredient/" + ingredientName.ToString());
             ingredient = Instantiate(ingredientPrefab);
             ingredient.transform.position = new Vector3(0f, random_y, 0f);
             //±è¹ä¸Å´ÏÀú¿¡¼­ ±è¹ä ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿À±â

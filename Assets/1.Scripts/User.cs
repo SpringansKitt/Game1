@@ -89,11 +89,13 @@ public class User : MonoBehaviour
         return userIngredient;
     }
 
-    public void AddCoin()
+
+    public void AddCoin(int coin)
     {
-        userData.coin += 1;
+        userData.coin += coin;
         SaveManager.SaveData("UserData", userData);
     }
+
 
     public void AddLevel()
     {
@@ -109,6 +111,29 @@ public class User : MonoBehaviour
         SaveManager.SaveData("UserData", userData);
         userLevelText.text = userData.userLevel.ToString();
     }
+
+    public void AddRecipe(string r)
+    {
+        UserRecipe userRecipe = GetUserRecipe(r);
+        userRecipe.inPossession = true;
+        SaveManager.SaveData("UserData", userData);
+    }
+    public UserRecipe GetUserRecipe(string rKey)
+    {
+        for (int i = 0; i < userData.userRecipes.Count; i++)
+        {
+            if (userData.userRecipes[i].key == rKey)
+            {
+                return userData.userRecipes[i];
+            }
+        }
+        UserRecipe userRecipe = new UserRecipe();
+        userRecipe.key = rKey;
+        userRecipe.inPossession = false;
+        userData.userRecipes.Add(userRecipe);
+
+        return userRecipe;
+    }
 }
 
 
@@ -117,6 +142,7 @@ public class UserData
 {
     public int coin;
     public List<UserIngredient> userIngredients = new List<UserIngredient>();
+    public List<UserRecipe> userRecipes = new List<UserRecipe>();
     public string userName;
     public int userLevel;
     public float userExp;
@@ -134,4 +160,5 @@ public class UserIngredient
 public class UserRecipe
 {
     public string key;
+    public bool inPossession;
 }

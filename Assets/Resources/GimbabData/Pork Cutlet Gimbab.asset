@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e6c7077a80d5dc49a50aae82600893f, type: 3}
   m_Name: Pork Cutlet Gimbab
   m_EditorClassIdentifier: 
-  gimbabName: 7
+  gimbabName: 8
   thum: {fileID: 0}
   price: 0
-  ingredientNames: 
+  ingredientNames: 0000000001000000030000000a00000012000000120000001200000013000000

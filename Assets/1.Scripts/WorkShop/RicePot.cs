@@ -42,7 +42,7 @@ public class RicePot : IngredientContainer
         if (holdTimer >= 0.25f && ingredient == null && ishold)
         {
             Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Ingredient ingredientPrefab = Resources.Load<Ingredient>(ingredientName.ToString());
+            Ingredient ingredientPrefab = Resources.Load<Ingredient>("Ingredient/" + ingredientName.ToString());
             ingredient = Instantiate(ingredientPrefab);
             ingredient.transform.position = worldPoint;
         }

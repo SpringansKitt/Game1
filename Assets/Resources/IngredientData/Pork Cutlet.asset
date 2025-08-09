@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67411115aa71630429bec4086b5b3a4d, type: 3}
   m_Name: Pork Cutlet
   m_EditorClassIdentifier: 
-  ingredientName: 18
+  ingredientName: 19
   thum: {fileID: 0}
   price: 0

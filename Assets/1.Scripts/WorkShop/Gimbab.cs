@@ -13,7 +13,8 @@ public class Gimbab : MonoBehaviour
         ingredient.transform.position = transform.position;
         ingredient.transform.parent = transform;
         ingredients.Add(ingredient);
-        user.AddCoin();
+        IngredientData data = Resources.Load<IngredientData>("Ingredient/" + ingredient.key);
+        user.AddCoin(-data.price);
         ChangeTransform(ingredient);
     }
 

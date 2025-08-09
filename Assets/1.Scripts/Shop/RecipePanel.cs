@@ -8,9 +8,10 @@ public class RecipePanel : MonoBehaviour
 
     public TMP_Text nameText;
     public TMP_Text priceText;
+
     void Start()
     {
-        recipeData = Resources.Load<RecipeData>("Recipe/" +  key);
+        recipeData = Resources.Load<RecipeData>("RecipeData/" +  key);
         nameText.text = recipeData.recipeName;
         priceText.text = recipeData.price.ToString();
 
@@ -27,6 +28,18 @@ public class RecipePanel : MonoBehaviour
     }
     public void OnClickedPurchased()
     {
+        if(User.instance.userData.coin < recipeData.price)
+        {
+            Debug.Log("µ· ºÎÁ·");
+            return;
+        }
 
+        User.instance.AddCoin(-recipeData.price);
+        for(int i = 0; i < recipeData.ingredientNames.Length; i++)
+        {
+            User.instance.AddIngredient(recipeData.ingredientNames[i].ToString());
+        }
+
+        User.instance.AddRecipe(recipeData.key);
     }
 }

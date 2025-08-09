@@ -1,45 +1,51 @@
 {
-    "coin": 1016,
+    "coin": 10000000,
     "userIngredients": [
         {
             "key": "Egg",
-            "inPossession": false
+            "inPossession": true
         },
         {
             "key": "CrabStick",
-            "inPossession": false
+            "inPossession": true
         },
         {
             "key": "Carrot",
-            "inPossession": false
+            "inPossession": true
         },
         {
             "key": "Laver",
-            "inPossession": false
+            "inPossession": true
         },
         {
             "key": "Spinach",
-            "inPossession": false
+            "inPossession": true
         },
         {
             "key": "Cucumber",
-            "inPossession": false
+            "inPossession": true
         },
         {
             "key": "Rice",
-            "inPossession": false
+            "inPossession": true
         },
         {
             "key": "Ham",
-            "inPossession": false
+            "inPossession": true
         },
         {
             "key": "Burdock",
-            "inPossession": false
+            "inPossession": true
         },
         {
             "key": "PickledRadish",
-            "inPossession": false
+            "inPossession": true
+        }
+    ],
+    "userRecipes": [
+        {
+            "key": "Cheeze",
+            "inPossession": true
         }
     ],
     "userName": "",
