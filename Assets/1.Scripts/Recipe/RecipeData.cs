@@ -8,6 +8,7 @@ public class RecipeData : ScriptableObject
     public int userLevel;
     public GimbabName[] gimbabNames;
     public int price;
+    public Sprite icon;
 
     public IngredientName[] ingredientNames;
 }

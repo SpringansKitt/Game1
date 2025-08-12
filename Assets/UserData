@@ -1,5 +1,5 @@
 {
-    "coin": 10000000,
+    "coin": 9999700,
     "userIngredients": [
         {
             "key": "Egg",
@@ -40,15 +40,27 @@
         {
             "key": "PickledRadish",
             "inPossession": true
+        },
+        {
+            "key": "Tuna",
+            "inPossession": true
+        },
+        {
+            "key": "SesameLeaf",
+            "inPossession": true
         }
     ],
     "userRecipes": [
         {
             "key": "Cheeze",
             "inPossession": true
+        },
+        {
+            "key": "Tuna",
+            "inPossession": true
         }
     ],
     "userName": "",
-    "userLevel": 1,
+    "userLevel": 4,
     "userExp": 0.0
 }

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1aaa5e62523b8c49bef85979b57aed0, type: 3}
   m_Name: Gimbab
   m_EditorClassIdentifier: 
-  recipeName: 
-  key: 
+  recipeName: Gimbab
+  key: Gimbab
   userLevel: 1
   gimbabNames: 00000000
   price: 100
+  icon: {fileID: -2462898515620603090, guid: 625050041bcae2d4295b97428d428284, type: 3}
   ingredientNames: 0000000001000000030000000400000005000000060000000700000008000000090000000a000000

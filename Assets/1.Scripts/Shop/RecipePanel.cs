@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RecipePanel : MonoBehaviour
 {
@@ -9,21 +10,63 @@ public class RecipePanel : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text priceText;
 
-    void Start()
-    {
-        recipeData = Resources.Load<RecipeData>("RecipeData/" +  key);
-        nameText.text = recipeData.recipeName;
-        priceText.text = recipeData.price.ToString();
+    public GameObject purchaseButton;
+    public GameObject purchaseImage;
+    public GameObject unlockImage;
 
-        if (User.instance.userData.userLevel < recipeData.userLevel)
-        {
-            gameObject.SetActive(false);
-        }
+    public TMP_Text unlockLvText;
+    public Image iconImage;
+
+
+    public void Awake()
+    {
+        recipeData = Resources.Load<RecipeData>("RecipeData/" + key);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnEnable()
     {
+        UpdatePanel();
+    }
+    void Start()
+    {
+        nameText.text = recipeData.recipeName;
+        priceText.text = recipeData.price.ToString();
+        unlockLvText.text = $"Lv.{recipeData.userLevel} Unlock";
+        iconImage.sprite = recipeData.icon;
+        UpdatePanel();
+    }
+
+    public void UpdatePanel()
+    {
+        if (User.instance.userData.userLevel < recipeData.userLevel)
+        {
+            purchaseButton.SetActive(false);
+            purchaseImage.SetActive(false);
+            unlockImage.SetActive(true);
+            nameText.text = "???";
+            return;
+        }
+
+        else
+        {
+            nameText.text = recipeData.recipeName;
+            UserRecipe userRecipe = User.instance.GetUserRecipe(key);
+            if(userRecipe.inPossession)
+            {
+                purchaseButton.SetActive(false);
+                purchaseImage.SetActive(true);
+                unlockImage.SetActive(false);
+                return;
+            }
+
+            else
+            {
+                purchaseButton.SetActive(true);
+                purchaseImage.SetActive(false);
+                unlockImage.SetActive(false);
+                return;
+            }
+        }
         
     }
     public void OnClickedPurchased()
@@ -41,5 +84,6 @@ public class RecipePanel : MonoBehaviour
         }
 
         User.instance.AddRecipe(recipeData.key);
+        UpdatePanel();
     }
 }
