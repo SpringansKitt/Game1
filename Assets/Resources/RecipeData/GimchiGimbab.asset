@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1aaa5e62523b8c49bef85979b57aed0, type: 3}
-  m_Name: Gimchi
+  m_Name: GimchiGimbab
   m_EditorClassIdentifier: 
   recipeName: Gimchi Gimbab
-  key: Gimchi
+  key: GimchiGimbab
   userLevel: 8
   gimbabNames: 04000000
   price: 500

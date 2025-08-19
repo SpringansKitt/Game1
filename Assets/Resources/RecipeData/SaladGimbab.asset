@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1aaa5e62523b8c49bef85979b57aed0, type: 3}
-  m_Name: Shrimp
+  m_Name: SaladGimbab
   m_EditorClassIdentifier: 
-  recipeName: Shrimp Gimbab
-  key: Shhrimp
-  userLevel: 14
-  gimbabNames: 06000000
-  price: 700
+  recipeName: Salad Gimbab
+  key: SaladGimbab
+  userLevel: 6
+  gimbabNames: 03000000
+  price: 400
   icon: {fileID: -2462898515620603090, guid: 625050041bcae2d4295b97428d428284, type: 3}
-  ingredientNames: 0000000001000000030000000400000007000000090000000a00000011000000
+  ingredientNames: 00000000010000000300000008000000090000000a0000000e000000

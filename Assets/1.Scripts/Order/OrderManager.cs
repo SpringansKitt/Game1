@@ -4,10 +4,13 @@ using Boomlagoon.JSON;
 
 public class OrderManager : MonoBehaviour
 {
+    public static OrderManager instance;
     public OrderData[] orderDatas;
 
+    
     private void Awake()
     {
+        instance = this;
         TextAsset textAsset = Resources.Load<TextAsset>("JSON/OrderData");
         string json = textAsset.text;
 
@@ -55,6 +58,22 @@ public class OrderManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    public List<OrderData> orderDataList = new List<OrderData>();
+    public List<OrderData> GetCanOrderDatas()
+    {
+        orderDataList.Clear();
+        for (int i = 0; i < orderDatas.Length; i++)
+        {
+            UserRecipe userRecipe = User.instance.GetUserRecipe(orderDatas[i].gimbabName.ToString());
+            if (userRecipe.inPossession)
+            {
+                orderDataList.Add(orderDatas[i]);
+            }
+        }
+        return orderDataList;
     }
 }
 [System.Serializable]

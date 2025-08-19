@@ -1,12 +1,42 @@
 using UnityEngine;
 
-public class MenuPanel : MonoBehaviour
+public class ShopPanel : MonoBehaviour
 {
+    public Animator shopAnimator;
+    public GameObject shopPanelBackGround;
+
+    public bool isShow;
+
     public GameObject recipePanel;
     public GameObject upgradePanel;
     public GameObject toolPanel;
     public GameObject interiorPanel;
+
+    void Awake()
+    {
+        shopAnimator = this.GetComponent<Animator>();
+    }
+    void Start()
+    {
+        isShow = false;
+        shopPanelBackGround.SetActive(false);
+    }
+
+    public void OnClickedShopButton()
+    {
+        shopPanelBackGround.SetActive(true);
+        shopAnimator.SetTrigger("doShow");
+        isShow = true;
+     }
     
+    public void OnClickedShopExitButton()
+    {
+        shopPanelBackGround.SetActive(false);
+        shopAnimator.SetTrigger("doHide");
+        isShow = false;
+    }
+
+
 
     public void OnClickedRecipeButton()
     {

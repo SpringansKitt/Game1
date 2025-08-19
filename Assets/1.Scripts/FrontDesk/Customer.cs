@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Customer : MonoBehaviour
@@ -18,7 +19,13 @@ public class Customer : MonoBehaviour
 
     public void StartOrder()
     {
-        orderCanvas.StartOrder(orderScript);
+        List<OrderData> canOrderlist = OrderManager.instance.GetCanOrderDatas();
+
+        OrderData orderData = canOrderlist[Random.Range(0, canOrderlist.Count)];
+        //string script = orderData.orders[Random.Range(0, orderData.orders.Length)];
+        string script = "q";
+
+        orderCanvas.StartOrder(script);
     }
     void Start()
     {

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1aaa5e62523b8c49bef85979b57aed0, type: 3}
-  m_Name: Korean Fish Cake
+  m_Name: BulgogiGimbab
   m_EditorClassIdentifier: 
-  recipeName: Korean Fish Cake Gimbab
-  key: Korean Fish Cake
-  userLevel: 16
-  gimbabNames: 07000000
-  price: 800
+  recipeName: Bulgogi Gimbab
+  key: BulgogiGimbab
+  userLevel: 20
+  gimbabNames: 09000000
+  price: 1000
   icon: {fileID: -2462898515620603090, guid: 625050041bcae2d4295b97428d428284, type: 3}
-  ingredientNames: 00000000010000000a00000012000000
+  ingredientNames: 0000000001000000030000000500000008000000090000000a00000014000000

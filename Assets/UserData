@@ -52,11 +52,11 @@
     ],
     "userRecipes": [
         {
-            "key": "Cheeze",
+            "key": "CheezeGimbab",
             "inPossession": true
         },
         {
-            "key": "Tuna",
+            "key": "TunaGimbab",
             "inPossession": true
         }
     ],
