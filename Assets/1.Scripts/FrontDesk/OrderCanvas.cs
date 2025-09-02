@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class OrderCanvas : MonoBehaviour
 {
@@ -14,18 +15,22 @@ public class OrderCanvas : MonoBehaviour
 
     public GameObject workShop;
     public GimbabManager gimbabManager;
+
     public void StartOrder(string script)
     {
         gameObject.SetActive(true);
-        StartCoroutine(CoOrder(script));
         acceptButton.SetActive(false);
         refuseButton.SetActive(false);
+        StartCoroutine(CoOrder(script));
     }
 
     IEnumerator CoOrder(string script)
     {
         char[] scripts = script.ToCharArray();
         scriptText.text = "";
+
+        yield return new WaitForSeconds(0.2f);
+
         for (int i = 0; i < scripts.Length; i++)
         {
             scriptText.text += scripts[i].ToString();
@@ -48,8 +53,8 @@ public class OrderCanvas : MonoBehaviour
     }
     public void OnClickedRefuseButton()
     {
-        customer.gameObject.SetActive(false);
         gameObject.SetActive(false);
+        customer.Exit();
         Invoke("BackFrontDesk", 2.0f);
     }
 

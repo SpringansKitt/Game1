@@ -1,9 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ShopPanel : MonoBehaviour
 {
     public Animator shopAnimator;
     public GameObject shopPanelBackGround;
+    public GameObject coinPanel;
 
     public bool isShow;
 
@@ -19,12 +22,14 @@ public class ShopPanel : MonoBehaviour
     void Start()
     {
         isShow = false;
-        shopPanelBackGround.SetActive(false);
     }
 
     public void OnClickedShopButton()
     {
+        gameObject.SetActive(true);
+        OnClickedRecipeButton();
         shopPanelBackGround.SetActive(true);
+        coinPanel.SetActive(true);
         shopAnimator.SetTrigger("doShow");
         isShow = true;
      }
@@ -32,11 +37,20 @@ public class ShopPanel : MonoBehaviour
     public void OnClickedShopExitButton()
     {
         shopPanelBackGround.SetActive(false);
+        coinPanel.SetActive(false);
         shopAnimator.SetTrigger("doHide");
         isShow = false;
+        StartCoroutine(CoAfterHide());
     }
 
 
+    public IEnumerator CoAfterHide()
+    {
+        yield return null;
+        yield return new WaitForSeconds(shopAnimator.GetCurrentAnimatorStateInfo(0).length);
+        gameObject.SetActive(false);
+
+    }
 
     public void OnClickedRecipeButton()
     {

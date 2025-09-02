@@ -1,5 +1,5 @@
 {
-    "coin": 9999700,
+    "coin": 9999695,
     "userIngredients": [
         {
             "key": "Egg",
@@ -48,6 +48,38 @@
         {
             "key": "SesameLeaf",
             "inPossession": true
+        },
+        {
+            "key": "Salad",
+            "inPossession": false
+        },
+        {
+            "key": "PriedShrimp",
+            "inPossession": false
+        },
+        {
+            "key": "Cheeze",
+            "inPossession": false
+        },
+        {
+            "key": "Bulgogi",
+            "inPossession": false
+        },
+        {
+            "key": "Gimchi",
+            "inPossession": false
+        },
+        {
+            "key": "ChiliPepper",
+            "inPossession": false
+        },
+        {
+            "key": "KoreanFishCake",
+            "inPossession": false
+        },
+        {
+            "key": "PorkCutlet",
+            "inPossession": false
         }
     ],
     "userRecipes": [
@@ -58,6 +90,14 @@
         {
             "key": "TunaGimbab",
             "inPossession": true
+        },
+        {
+            "key": "Gimbab",
+            "inPossession": false
+        },
+        {
+            "key": "SaladGimbab",
+            "inPossession": false
         }
     ],
     "userName": "",

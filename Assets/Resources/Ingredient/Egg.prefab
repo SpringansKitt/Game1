@@ -132,3 +132,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306fa8db210aef447a5efdb112f0924c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: Egg

@@ -11,6 +11,7 @@ public class FrontDeskManager : MonoBehaviour
     {
         customer.gameObject.SetActive(false);
         orderCanvas.gameObject.SetActive(false);
+
         EnterCustomer();
     }
 

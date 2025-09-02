@@ -18,12 +18,12 @@ public class RecipePanel : MonoBehaviour
     public Image iconImage;
 
 
-    public void Awake()
+    void Awake()
     {
         recipeData = Resources.Load<RecipeData>("RecipeData/" + key);
     }
 
-    public void OnEnable()
+    void OnEnable()
     {
         UpdatePanel();
     }
@@ -32,7 +32,6 @@ public class RecipePanel : MonoBehaviour
         nameText.text = recipeData.recipeName;
         priceText.text = recipeData.price.ToString();
         unlockLvText.text = $"Lv.{recipeData.userLevel} Unlock";
-        iconImage.sprite = recipeData.icon;
         UpdatePanel();
     }
 
@@ -44,11 +43,13 @@ public class RecipePanel : MonoBehaviour
             purchaseImage.SetActive(false);
             unlockImage.SetActive(true);
             nameText.text = "???";
+            iconImage.sprite = Resources.Load<Sprite>("Icons/Lock");
             return;
         }
 
         else
         {
+            iconImage.sprite = recipeData.icon;
             nameText.text = recipeData.recipeName;
             UserRecipe userRecipe = User.instance.GetUserRecipe(key);
             if(userRecipe.inPossession)

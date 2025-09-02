@@ -9,11 +9,15 @@ public class Gimbab : MonoBehaviour
     
     public void AddIngredient(Ingredient ingredient)
     {
+        if (rolled)
+        {
+            return;
+        }
         User user = User.instance;
         ingredient.transform.position = transform.position;
         ingredient.transform.parent = transform;
         ingredients.Add(ingredient);
-        IngredientData data = Resources.Load<IngredientData>("Ingredient/" + ingredient.key);
+        IngredientData data = Resources.Load<IngredientData>("IngredientData/" + ingredient.key);
         user.AddCoin(-data.price);
         ChangeTransform(ingredient);
     }
