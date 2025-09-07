@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GimbabManager : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class GimbabManager : MonoBehaviour
     public bool rolling;
     public Transform rollerTr;
 
+    public Transform leftTr;
+    public Transform rightTr;
+
+    public Transform workSpaceTr;
+    public bool isDragging;
+    public Vector2 preWorldPoint;
     public void Awake()
     {
         instance = this;
@@ -58,15 +65,38 @@ public class GimbabManager : MonoBehaviour
                     break;
                 }
             }
+            isDragging = true;
+            preWorldPoint = worldPoint;
         }
         else if (Input.GetMouseButton(0)) //누르고 있는 상태면 true  
         {
-            if (ingredientContainer == null)
-                return;
             Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                ingredientContainer.Drag(worldPoint);
-            // ingredientContainer.ingredientName -> 재료의 종류!
+
+            if (isDragging)
+            {
+                Vector2 direction = worldPoint - preWorldPoint;
+                workSpaceTr.position = new Vector3(workSpaceTr.position.x + direction.x, workSpaceTr.position.y, 0);
+
+                if (workSpaceTr.position.x < leftTr.position.x)
+                {
+                    workSpaceTr.position = new Vector3(leftTr.position.x, workSpaceTr.position.y, 0);
+                }
+                else if (workSpaceTr.position.x > rightTr.position.x)
+                {
+                    workSpaceTr.position = new Vector3(rightTr.position.x, workSpaceTr.position.y, 0);
+                }
+
+                preWorldPoint = worldPoint;
+            }
+
+            if (ingredientContainer == null)
+            {
+                return;
+                // ingredientContainer.ingredientName -> 재료의 종류!
+            }
+            ingredientContainer.Drag(worldPoint);
         }
+
         else if (Input.GetMouseButtonUp(0)) //딱 떨어졌을 때 
         {
             if (ingredientContainer == null)
@@ -79,8 +109,9 @@ public class GimbabManager : MonoBehaviour
 
     public void StartWork()
     {
+        workSpaceTr.transform.position = rightTr.position;
         GameManager gameManager = GameManager.instance;
-        gimbab = Instantiate(gimbabPrefeb);
+        gimbab = Instantiate(gimbabPrefeb, workSpaceTr);
         gimbab.transform.position = cuttingBoardTr.position;
         gameManager.endurance = 100.0f;
         gameManager.isOrder = true;

@@ -6,7 +6,9 @@ public class Gimbab : MonoBehaviour
     public List<Ingredient> ingredients = new List<Ingredient>();
     public bool rolled;
 
-    
+    public Transform GimbabTopTr;
+    public Transform GimbabBottomTr;
+
     public void AddIngredient(Ingredient ingredient)
     {
         if (rolled)
@@ -16,6 +18,7 @@ public class Gimbab : MonoBehaviour
         User user = User.instance;
         ingredient.transform.position = transform.position;
         ingredient.transform.parent = transform;
+        ingredient.Added();
         ingredients.Add(ingredient);
         IngredientData data = Resources.Load<IngredientData>("IngredientData/" + ingredient.key);
         user.AddCoin(-data.price);
@@ -26,8 +29,8 @@ public class Gimbab : MonoBehaviour
     {
         if (true)
         {
-            float random_y = Random.Range(-3.5f, -0.5f);
-            ingredient.transform.position = new Vector3(0f, random_y, 0f);
+            float random_y = Random.Range(GimbabBottomTr.position.y, GimbabTopTr.position.y);
+            ingredient.transform.position = new Vector3(transform.position.x, random_y, 0f);
         }
     }
 }
